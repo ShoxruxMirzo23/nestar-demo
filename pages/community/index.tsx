@@ -11,6 +11,7 @@ const Community: NextPage = () => {
       <button onClick={() => alert("Hello MIT")} style={{ margin: "15px" }}>
         Press Me
       </button>
+      <div>MIT-9 </div>
     </div>
   );
 };
