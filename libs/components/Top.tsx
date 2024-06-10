@@ -1,13 +1,13 @@
 import { Logout } from "@mui/icons-material";
-import { Box, Link, Menu, MenuItem, Stack } from "@mui/material";
+import { Box, Menu, MenuItem, Stack } from "@mui/material";
+import Link from "next/link";
 
-const TOP = () => {
+const Top = () => {
   return (
     <Stack className={"navbar"}>
       <Stack className={"navbar-main"}>
-        <Stack className="container">
+        <Stack className={"container"}>
           <Box component={"div"} className={"logo-box"}>
-            {" "}
             <Link href={"/"}>
               <img src="/img/logo/logoWhite.svg" alt="" />
             </Link>
@@ -25,15 +25,14 @@ const TOP = () => {
             <Link href={"/community?articleCategory=FREE"}>
               <div>Community</div>
             </Link>
-
             <Link href={"/cs"}>
               <div>CS</div>
             </Link>
           </Box>
           <Box component={"div"} className={"user-box"}>
             <>
-              <div className={"login-user"}>
-                <img src={"/img/profile/defaultUser.svg"} alt="" />
+              <div className="login-user">
+                <img src="/img/profile/defaultUser.svg" />
               </div>
 
               <Menu id="basic-menu" sx={{ mt: "5px" }} open={false}>
@@ -41,8 +40,9 @@ const TOP = () => {
                   <Logout
                     fontSize="small"
                     style={{ color: "blue", marginRight: "10px" }}
-                  />
-                  Logout
+                  >
+                    Logout
+                  </Logout>
                 </MenuItem>
               </Menu>
             </>
@@ -53,4 +53,4 @@ const TOP = () => {
   );
 };
 
-export default TOP;
+export default Top;

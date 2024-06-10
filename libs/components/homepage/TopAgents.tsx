@@ -6,6 +6,7 @@ import TopAgentCard from "./TopAgentCard";
 
 const TopAgents = ({ initialInput, ...props }: any) => {
   const [topAgents, setTopAgents] = useState<number[]>(initialInput);
+
   return (
     <Stack className={"top-agents"}>
       <Stack className={"container"}>
