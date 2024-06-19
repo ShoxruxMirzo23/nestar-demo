@@ -9,17 +9,25 @@ import TopAgents from "@/libs/components/homepage/TopAgents";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import useDeviceDetect from "@/libs/hooks/useDeviceDetect";
 
 const Home: NextPage = () => {
-  return (
-    <Stack className={"home-page"}>
-      <TrendProperties />
-      <PopularProperties />
-      <Advertisement />
-      <TopProperties />
-      <TopAgents />
-    </Stack>
-  );
+  // DEVICE: MOBILE vs PC
+  const device = useDeviceDetect();
+
+  if (device === "mobile") {
+    return <Stack>HomePage Mobile</Stack>;
+  } else {
+    return (
+      <Stack className={"home-page"}>
+        <TrendProperties />
+        <PopularProperties />
+        <Advertisement />
+        <TopProperties />
+        <TopAgents />
+      </Stack>
+    );
+  }
 };
 
 export default withLayoutMain(Home);
